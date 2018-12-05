@@ -31,4 +31,4 @@ The entities required are therefore:
 I have created a swagger spec to document this stage of the design (see: swagger.json)
 Using this swagger spec I have generated a sample API, with a controller for the /route endpoint.
 * Build this API using `mvn package` from the spring-server/ directory
-* Run this API locally using `java -jar server/target/swagger-spring-1.0.0.jar` (server will be listening on port 8080)
+* Run this API locally using `java -jar server/target/server-0.0.1-SNAPSHOT.jar` (server will be listening on port 8080)
