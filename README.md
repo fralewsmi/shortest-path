@@ -46,3 +46,4 @@ The simplest way to do so is to go to this address in your browser and use the s
 * A database should be setup to store the rail network information, having the network setup in the local Java is okay for demo purposes but a database would scale up far better if the API was grown.
 * I'm not convinced having separate models for Graphs, Nodes, Routes and Stations is a good idea. I would like to have had a Station as a subclass of a Node, with a Route a subclass of a Graph. This would make the conversion between the output of a sorting algorithm into the API response more intuitive.
 * Using a factory pattern to construct the shortest path alogrithm would provide more encapsulation for that module and allow developers to switch algorithms on the fly
+* Using test driven development would have been prudent, and there still is a need to add tests to cover the restful API methods and testing any implementation of the algorithm interface
