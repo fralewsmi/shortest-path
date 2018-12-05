@@ -40,7 +40,9 @@ The API is accessible by performing HTTP requests against http://localhost:8080
 The simplest way to do so is to go to this address in your browser and use the swagger UI to enter an origin and a destination. 
  
 ## Future work, enhancements and shortcomings 
-* Implementing custom response types would give a more meaningful result for users
-* A web application would be simple to integrate with the API and provide a better interface than the swagger UI
+* Implementing custom response types would give more meaningful feedback for developers to work with when integrating with the API
+* A web application would be simple to integrate with the API and provide a better interface than the swagger UI,
 * Additional restful methods should be added which allow users to add stations to the rail network themselves, instead of it being hardcoded
-* A database should be setup to store the rail network information
+* A database should be setup to store the rail network information, having the network setup in the local Java is okay for demo purposes but a database would scale up far better if the API was grown.
+* I'm not convinced having separate models for Graphs, Nodes, Routes and Stations is a good idea. I would like to have had a Station as a subclass of a Node, with a Route a subclass of a Graph. This would make the conversion between the output of a sorting algorithm into the API response more intuitive.
+* Using a factory pattern to construct the shortest path alogrithm would provide more encapsulation for that module and allow developers to switch algorithms on the fly
