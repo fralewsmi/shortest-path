@@ -10,5 +10,7 @@ public class Graph {
         nodes.add(nodeA);
     }
 
-    // getters and setters
+    public Set<Node> getNodes() {
+        return nodes;
+    }
 }

@@ -22,6 +22,10 @@ public class Node {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public List<Node> getShortestPath() {
         return shortestPath;
     }
@@ -42,5 +46,4 @@ public class Node {
         return adjacentNodes;
     }
 
-    // getters and setters
 }

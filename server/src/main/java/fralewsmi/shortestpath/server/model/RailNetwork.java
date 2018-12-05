@@ -1,13 +1,14 @@
 package fralewsmi.shortestpath.server.model;
 
-import fralewsmi.shortestpath.server.calculator.Dijkstra;
-import fralewsmi.shortestpath.server.calculator.ShortestPathAlgorithm;
 import fralewsmi.shortestpath.server.calculator.model.Graph;
 import fralewsmi.shortestpath.server.calculator.model.Node;
 
 public class RailNetwork implements Network {
+
+    private Graph graph;
+
     @Override
-    public void create() {
+    public Graph createGraph() {
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");
         Node nodeC = new Node("C");
@@ -28,7 +29,7 @@ public class RailNetwork implements Network {
 
         nodeF.addDestination(nodeE, 5);
 
-        Graph graph = new Graph();
+        graph = new Graph();
 
         graph.addNode(nodeA);
         graph.addNode(nodeB);
@@ -37,7 +38,6 @@ public class RailNetwork implements Network {
         graph.addNode(nodeE);
         graph.addNode(nodeF);
 
-        ShortestPathAlgorithm shortestPathAlgorithm = new Dijkstra();
-        graph = shortestPathAlgorithm.calculateShortestPathFromSource(graph, nodeA);
+        return graph;
     }
 }
