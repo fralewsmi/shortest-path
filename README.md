@@ -13,8 +13,11 @@ Find the shortest path between two points in a rail network
 An API must be designed so that:
 * A user can search the shortest route by giving two stations in the network
 * Search algorithms can be swapped out and enhanced conveniently by developers
-* The network should be able to be extended
 * The solution is able to be integrated with an external interface (e.g. a web application)
+
+## Sorting Algorithm
+Initial sorting algorithm is an implementation of Dijkstra's algorithm from https://www.baeldung.com/java-dijkstra
+An interface is used to enable further development of other algorithms without breaking integration with the API
 
 ## API Design
 The simplest approach is to have a restful endpoint for getting a shortest route by supplying the starting point and the destination
@@ -27,12 +30,17 @@ The entities required are therefore:
 * Station - has a name attribute which matches the name provided in the query parameters
 
 ## API Development
-
 I have created a swagger spec to document this stage of the design (see: swagger.json)
 Using this swagger spec I have generated a sample API, with a controller for the /route endpoint.
 * Build this API using `mvn package` from the spring-server/ directory
 * Run this API locally using `java -jar server/target/server-0.0.1-SNAPSHOT.jar` (server will be listening on port 8080)
 
-## Sorting Algorithm
-Initial sorting algorithm is an implementation of Dijkstra's algorithm from https://www.baeldung.com/java-dijkstra
-An interface is used to enable further development of other algorithms without breaking integration with the API
+## User Interface
+The API is accessible by performing HTTP requests against http://localhost:8080
+The simplest way to do so is to go to this address in your browser and use the swagger UI to enter an origin and a destination. 
+ 
+## Future work, enhancements and shortcomings 
+* Implementing custom response types would give a more meaningful result for users
+* A web application would be simple to integrate with the API and provide a better interface than the swagger UI
+* Additional restful methods should be added which allow users to add stations to the rail network themselves, instead of it being hardcoded
+* A database should be setup to store the rail network information

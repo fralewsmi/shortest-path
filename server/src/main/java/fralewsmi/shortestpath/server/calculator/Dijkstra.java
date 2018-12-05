@@ -8,6 +8,10 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
+
+/*
+* Algorithm from https://www.baeldung.com/java-dijkstra
+*/
 public class Dijkstra implements ShortestPathAlgorithm {
     public Graph calculateShortestPathFromSource(Graph graph, Node source) {
         source.setDistance(0);

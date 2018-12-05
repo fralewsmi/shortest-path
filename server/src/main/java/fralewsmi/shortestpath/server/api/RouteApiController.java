@@ -1,12 +1,12 @@
 package fralewsmi.shortestpath.server.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fralewsmi.shortestpath.server.api.network.Network;
+import fralewsmi.shortestpath.server.api.network.RailNetwork;
 import fralewsmi.shortestpath.server.calculator.Dijkstra;
 import fralewsmi.shortestpath.server.calculator.ShortestPathAlgorithm;
 import fralewsmi.shortestpath.server.calculator.model.Graph;
 import fralewsmi.shortestpath.server.calculator.model.Node;
-import fralewsmi.shortestpath.server.model.Network;
-import fralewsmi.shortestpath.server.model.RailNetwork;
 import fralewsmi.shortestpath.server.model.Route;
 import fralewsmi.shortestpath.server.model.Station;
 import io.swagger.annotations.ApiParam;

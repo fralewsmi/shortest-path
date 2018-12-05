@@ -1,4 +1,4 @@
-package fralewsmi.shortestpath.server.model;
+package fralewsmi.shortestpath.server.api.network;
 
 import fralewsmi.shortestpath.server.calculator.model.Graph;
 
