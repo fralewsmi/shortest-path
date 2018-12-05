@@ -1,6 +1,6 @@
-package io.swagger.api;
+package fralewsmi.shortestpath.server.api;
 
-import io.swagger.model.Route;
+import fralewsmi.shortestpath.server.model.Route;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -20,7 +20,7 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-12-04T04:27:57.615Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-12-05T11:23:54.670-08:00")
 
 @Controller
 public class RouteApiController implements RouteApi {

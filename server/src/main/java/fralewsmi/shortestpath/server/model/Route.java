@@ -1,42 +1,55 @@
-package io.swagger.model;
+package fralewsmi.shortestpath.server.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fralewsmi.shortestpath.server.model.Station;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * Station
+ * Route
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-12-04T04:27:57.615Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-12-05T11:23:54.670-08:00")
 
-public class Station   {
-  @JsonProperty("name")
-  private String name = null;
+public class Route   {
+  @JsonProperty("stations")
+  @Valid
+  private List<Station> stations = null;
 
-  public Station name(String name) {
-    this.name = name;
+  public Route stations(List<Station> stations) {
+    this.stations = stations;
+    return this;
+  }
+
+  public Route addStationsItem(Station stationsItem) {
+    if (this.stations == null) {
+      this.stations = new ArrayList<Station>();
+    }
+    this.stations.add(stationsItem);
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get stations
+   * @return stations
   **/
   @ApiModelProperty(value = "")
 
+  @Valid
 
-  public String getName() {
-    return name;
+  public List<Station> getStations() {
+    return stations;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setStations(List<Station> stations) {
+    this.stations = stations;
   }
 
 
@@ -48,21 +61,21 @@ public class Station   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Station station = (Station) o;
-    return Objects.equals(this.name, station.name);
+    Route route = (Route) o;
+    return Objects.equals(this.stations, route.stations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(stations);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Station {\n");
+    sb.append("class Route {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    stations: ").append(toIndentedString(stations)).append("\n");
     sb.append("}");
     return sb.toString();
   }
