@@ -1,5 +1,7 @@
 package fralewsmi.shortestpath.server.api;
 
+import fralewsmi.shortestpath.server.model.Network;
+import fralewsmi.shortestpath.server.model.RailNetwork;
 import fralewsmi.shortestpath.server.model.Route;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -8,18 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.List;
+
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-12-05T11:23:54.670-08:00")
 
 @Controller
@@ -30,6 +28,8 @@ public class RouteApiController implements RouteApi {
     private final ObjectMapper objectMapper;
 
     private final HttpServletRequest request;
+
+    private Network network;
 
     @org.springframework.beans.factory.annotation.Autowired
     public RouteApiController(ObjectMapper objectMapper, HttpServletRequest request) {
@@ -49,6 +49,12 @@ public class RouteApiController implements RouteApi {
         }
 
         return new ResponseEntity<Route>(HttpStatus.NOT_IMPLEMENTED);
+    }
+
+    @PostConstruct
+    public void init() {
+        network = new RailNetwork();
+        network.create();
     }
 
 }

@@ -32,3 +32,7 @@ I have created a swagger spec to document this stage of the design (see: swagger
 Using this swagger spec I have generated a sample API, with a controller for the /route endpoint.
 * Build this API using `mvn package` from the spring-server/ directory
 * Run this API locally using `java -jar server/target/server-0.0.1-SNAPSHOT.jar` (server will be listening on port 8080)
+
+## Sorting Algorithm
+Initial sorting algorithm is an implementation of Dijkstra's algorithm from https://www.baeldung.com/java-dijkstra
+An interface is used to enable further development of other algorithms without breaking integration with the API
