@@ -26,4 +26,9 @@ The entities required are therefore:
 * Route - contains an ordered list of stations in the route
 * Station - has a name attribute which matches the name provided in the query parameters
 
+## API Development
+
 I have created a swagger spec to document this stage of the design (see: swagger.json)
+Using this swagger spec I have generated a sample API, with a controller for the /route endpoint.
+* Build this API using `mvn package` from the spring-server/ directory
+* Run this API locally using `java -jar target/swagger-spring-1.0.0.jar` (server will be listening on port 8080)
